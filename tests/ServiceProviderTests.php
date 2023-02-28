@@ -2,8 +2,8 @@
 
 use Cviebrock\LaravelElasticsearch\Factory;
 use Cviebrock\LaravelElasticsearch\Manager;
-use Elasticsearch;
-use Elasticsearch\Client;
+use OpenSearch;
+use OpenSearch\Client;
 
 
 class ServiceProviderTests extends TestCase
@@ -27,7 +27,7 @@ class ServiceProviderTests extends TestCase
      */
     public function testFacadeWorks(): void
     {
-        $ping = Elasticsearch::ping();
+        $ping = OpenSearch::ping();
 
         $this->assertTrue($ping);
     }
@@ -37,7 +37,7 @@ class ServiceProviderTests extends TestCase
      */
     public function testInfoWorks(): void
     {
-        $info = Elasticsearch::info();
+        $info = OpenSearch::info();
 
         $this->assertIsArray($info);
         $this->assertArrayHasKey('cluster_name', $info);

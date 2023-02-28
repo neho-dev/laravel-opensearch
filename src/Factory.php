@@ -2,8 +2,8 @@
 
 namespace Cviebrock\LaravelElasticsearch;
 
-use Elasticsearch\Client;
-use Elasticsearch\ClientBuilder;
+use OpenSearch\Client;
+use OpenSearch\ClientBuilder;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Ring\Future\CompletedFutureArray;
@@ -37,12 +37,12 @@ class Factory
     ];
 
     /**
-     * Make the Elasticsearch client for the given named configuration, or
+     * Make the OpenSearch client for the given named configuration, or
      * the default client.
      *
      * @param array $config
      *
-     * @return \Elasticsearch\Client
+     * @return \OpenSearch\Client
      */
     public function make(array $config): Client
     {
@@ -50,11 +50,11 @@ class Factory
     }
 
     /**
-     * Build and configure an Elasticsearch client.
+     * Build and configure an OpenSearch client.
      *
      * @param array $config
      *
-     * @return \Elasticsearch\Client
+     * @return \OpenSearch\Client
      */
     protected function buildClient(array $config): Client
     {

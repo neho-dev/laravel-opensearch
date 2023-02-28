@@ -1,6 +1,6 @@
 <?php namespace Cviebrock\LaravelElasticsearch;
 
-use Elasticsearch\Client;
+use OpenSearch\Client;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Arr;
 
@@ -49,7 +49,7 @@ class Manager
      *
      * @param string|null $name
      *
-     * @return \Elasticsearch\Client
+     * @return \OpenSearch\Client
      */
     public function connection(string $name = null): Client
     {
@@ -89,7 +89,7 @@ class Manager
      *
      * @param string $name
      *
-     * @return \Elasticsearch\Client
+     * @return \OpenSearch\Client
      */
     protected function makeConnection(string $name): Client
     {
